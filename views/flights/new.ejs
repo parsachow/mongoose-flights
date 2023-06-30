@@ -3,10 +3,23 @@
 <h2>Add a New Flight</h2>
 <form action="/flights" method="POST">
   <label>Airline:
-    <input type="text" name="airline">
+    <!-- <input type="text" name="airline"> -->
+    <select name="airline">
+      <option value="Air Canada">Air Canada</option>
+      <option value="United">United</option>
+      <option value="American">American</option>
+      <option value="Southwest">Southwest</option>
+      <option value="Emirates">Emirates</option>
+    </select>
   </label><br>
   <label>Airport:
-    <input type="text" name="airport">
+    <select name="airport">
+      <option value="LAX">LAX</option>
+      <option value="DBX">DBX</option>
+      <option value="YYZ">YYZ</option>
+      <option value="NYC">NYC</option>
+      <option value="SFO">SFO</option>
+    </select>
   </label><br>
   <label>Flight Num:
     <input type="number" name="flightNo">

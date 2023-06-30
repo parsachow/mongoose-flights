@@ -24,7 +24,6 @@ async function create(req, res) {
   
     res.redirect('flights/new');
 
-  
 }
 
 function newFlight(req, res){
