@@ -8,7 +8,7 @@ const destinationSchema = new Schema({
     timestamps: true
 })
 
-const flightsSchema = new Schema({
+const flightsSchema = new mongoose.Schema({
     airline: {type: String, enum: ['Air Canada', 'United', 'American', 'Southwest', 'Emirates']},
     airport: {type: String, enum: ['LAX', 'DBX', 'YYZ', 'NYC', 'SFO'], default: 'YYZ'},
     flightNo: {type: Number, min: 10, max: 9999},

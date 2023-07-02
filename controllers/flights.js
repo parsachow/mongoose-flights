@@ -1,7 +1,9 @@
 const Flight = require('../models/flight')
+
 module.exports = {
     index,
     newFlight,
+    show,
     create
 }
 
@@ -10,17 +12,17 @@ module.exports = {
 //     res.redirect('flights/index')
 // }
 
+async function show(req, res){
+    const flight = await Flight.findById(req.params.id);
+    console.log(flight);
+    //render the page by inputting the PATH and telling the page what to display by putting the variable after it 
+    res.render('flights/show', {flight})
+    
+}
+
 async function create(req, res) {
-    
-    req.body.airline = req.body.airline
-   
-    req.body.airport = req.body.airport
-    
-    req.body.flightNo = req.body.flightNo
-
-    req.body.departs = req.body.departs
-
-    const flightfromDB = await Flight.create(req.body);
+  
+    await Flight.create(req.body);
   
     res.redirect('flights/new');
 
@@ -35,3 +37,4 @@ async function index(req, res){
     console.log(flights)
     res.render('flights/index', { flights })
 }
+
