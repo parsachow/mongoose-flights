@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+button {
+  background-color: rgb(217, 184, 21);
+  color: black;
+}

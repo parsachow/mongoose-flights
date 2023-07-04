@@ -7,10 +7,7 @@ module.exports = {
     create
 }
 
-//  async function create(req, res) {
-//     Flight.create(req.body)
-//     res.redirect('flights/index')
-// }
+
 
 async function show(req, res){
     const flight = await Flight.findById(req.params.id);
