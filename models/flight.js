@@ -13,10 +13,13 @@ const flightsSchema = new mongoose.Schema({
     airport: {type: String, enum: ['LAX', 'DBX', 'YYZ', 'NYC', 'SFO'], default: 'YYZ'},
     flightNo: {type: Number, min: 10, max: 9999},
     destinations: [destinationSchema],
-    departs: Date
-}, {
+    departs: {type: Date,
+         default: () => new Date(new Date().setFullYear(new Date().getFullYear()+1))
+             }
+},
+ {
     timestamps: true
-})
+});
 
 
 
